@@ -15,12 +15,13 @@ public class MemberServiceTest {
 //    MemberService memberService = appConfig.memberService();
 
     MemberService memberService;
-
+    OrderService orderService;
     @BeforeEach
     public void beforeEach()
     {
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
     }
 
     @Test
@@ -34,6 +35,13 @@ public class MemberServiceTest {
 
         // then
         Assertions.assertThat(member).isEqualTo(findMember);
+    }
+
+    @Test
+    void print()
+    {
+        memberService.print();
+        orderService.print();
     }
 
 }

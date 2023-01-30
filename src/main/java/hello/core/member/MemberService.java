@@ -2,5 +2,7 @@ package hello.core.member;
 
 public interface MemberService {
     void join(Member member);
+
+    void print();
     Member findMember(Long memberId);
 }

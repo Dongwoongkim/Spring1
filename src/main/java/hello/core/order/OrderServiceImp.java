@@ -7,18 +7,24 @@ import hello.core.member.Member;
 public class OrderServiceImp implements OrderService{
 
     private final MemberRepository memberRepository;
-    private final DiscountPolicy dp;
+    private final DiscountPolicy discountPolicy;
 
-    public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy dp) {
+    public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
-        this.dp = dp;
+        this.discountPolicy = discountPolicy;
     }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
         Member member = memberRepository.findById(memberId);
-        int discountPrice = dp.discount(member,itemPrice);
+        int discountPrice = discountPolicy.discount(member,itemPrice);
 
         return new Order(memberId, itemName, itemPrice, discountPrice);
+    }
+
+    @Override
+    public void print()
+    {
+        System.out.println(this.memberRepository);
     }
 }

@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
-
     @Bean
     public MemberService memberService()
     {
@@ -31,9 +30,8 @@ public class AppConfig {
 
     @Bean
     public DiscountPolicy getPolicy() {
-//        return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
-
-
 }
+
+
