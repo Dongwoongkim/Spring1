@@ -3,10 +3,14 @@ package hello.core.member;
 import hello.core.MemberRepository;
 
 public class MemberServiceImp implements MemberService{
-    public final MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     public MemberServiceImp(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
+    }
+
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 
     @Override

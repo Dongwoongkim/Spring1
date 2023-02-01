@@ -37,11 +37,5 @@ public class MemberServiceTest {
         Assertions.assertThat(member).isEqualTo(findMember);
     }
 
-    @Test
-    void print()
-    {
-        memberService.print();
-        orderService.print();
-    }
 
 }

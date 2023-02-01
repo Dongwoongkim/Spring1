@@ -5,13 +5,16 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 
 public class OrderServiceImp implements OrderService{
-
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
     public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
+    }
+
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 
     @Override
