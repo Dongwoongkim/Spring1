@@ -1,10 +1,16 @@
 package hello.core;
 
 import hello.core.member.Member;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository
+@Controller
+@Component
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
