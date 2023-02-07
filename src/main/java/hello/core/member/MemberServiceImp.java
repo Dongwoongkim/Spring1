@@ -19,13 +19,6 @@ public class MemberServiceImp implements MemberService{
     }
 
     @Override
-    public void print()
-    {
-        System.out.println(this.memberRepository);
-    }
-
-
-    @Override
     public void join(Member member) {
         memberRepository.save(member);
     }

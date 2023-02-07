@@ -5,6 +5,7 @@ import hello.core.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImp;
 import hello.core.order.Order;
+import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImp;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -19,12 +20,7 @@ public class AutoAppConfigTest {
     @Test
     void basicBean()
     {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
-        String [] beanDefinitionNames = ac.getBeanDefinitionNames();
-
-        for (String s : beanDefinitionNames) {
-            System.out.println("beanDefinitionName = " + s);
-        }
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
         MemberService bean = ac.getBean(MemberService.class);
         Assertions.assertThat(bean).isInstanceOf(MemberServiceImp.class);

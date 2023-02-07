@@ -8,8 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.HashMap;
 import java.util.Map;
 
-@Repository
-@Controller
 @Component
 public class MemoryMemberRepository implements MemberRepository{
 

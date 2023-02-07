@@ -1,6 +1,7 @@
 package hello.core.beanfind;
 
 import hello.core.AppConfig;
+import hello.core.AutoAppConfig;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImp;
@@ -19,7 +20,7 @@ public class ApplicationContextBasicFindTest {
     @DisplayName("빈 이름으로 조회")
     void findBeanByName()
     {
-        MemberService memberService = ac.getBean("memberService", MemberService.class);
+        MemberService memberService = ac.getBean(MemberService.class);
         Assertions.assertThat(memberService).isInstanceOf(MemberServiceImp.class);
     }
 
@@ -27,7 +28,7 @@ public class ApplicationContextBasicFindTest {
     @DisplayName("구체 타입으로 조회")
     void findBeanByName2()
     {
-        MemberService memberService = ac.getBean("memberService", MemberServiceImp.class);
+        MemberService memberService = ac.getBean(MemberServiceImp.class);
         Assertions.assertThat(memberService).isInstanceOf(MemberServiceImp.class);
     }
 

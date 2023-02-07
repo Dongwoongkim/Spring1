@@ -44,12 +44,6 @@ public class OrderServiceTest {
         assertThat(order.getDiscountPrice()).isEqualTo(10000);
     }
 
-    @Test
-    void print()
-    {
-        memberService.print();
-        orderService.print();
-    }
 
     @Test
     void filedInjectionTest()

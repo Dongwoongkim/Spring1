@@ -1,6 +1,7 @@
 package hello.core.singleton;
 
 import hello.core.AppConfig;
+import hello.core.AutoAppConfig;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImp;
 import hello.core.order.OrderService;
@@ -14,11 +15,10 @@ public class ConfigTest {
     @Test
     void configTest()
     {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
         MemberServiceImp memberService = ac.getBean(MemberServiceImp.class);
         OrderServiceImp orderService = ac.getBean(OrderServiceImp.class);
-
+        
         System.out.println("MemberService memberRepo : " + memberService.getMemberRepository());
         System.out.println("orderService  memberRepo : " + orderService.getMemberRepository());
     }
