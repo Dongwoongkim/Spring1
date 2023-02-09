@@ -15,7 +15,7 @@ public class ConfigTest {
     @Test
     void configTest()
     {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberServiceImp memberService = ac.getBean(MemberServiceImp.class);
         OrderServiceImp orderService = ac.getBean(OrderServiceImp.class);
         

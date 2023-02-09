@@ -49,7 +49,7 @@ public class SingletonTest {
     @DisplayName("스프링 컨테이너와 싱글톤")
     void springContainer()
     {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         MemberService memberService = ac.getBean(MemberService.class);
         OrderService orderService = ac.getBean(OrderService.class);

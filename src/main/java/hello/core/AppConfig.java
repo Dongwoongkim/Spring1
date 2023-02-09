@@ -7,6 +7,7 @@ import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImp;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImp;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
@@ -24,8 +25,8 @@ public class AppConfig {
     public OrderService orderService()
     {
         System.out.println("call AppConfig.orderService");
-//        return new OrderServiceImp(memberRepository(),discountPolicy());
-        return null;
+        return new OrderServiceImp(memberRepository(),discountPolicy());
+//        return null;
     }
 
     @Bean
@@ -35,6 +36,7 @@ public class AppConfig {
     }
 
     @Bean
+    @Qualifier("mainDp")
     public DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }

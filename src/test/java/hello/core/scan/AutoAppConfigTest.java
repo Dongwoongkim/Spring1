@@ -27,6 +27,19 @@ public class AutoAppConfigTest {
 
         OrderServiceImp bean1 = ac.getBean(OrderServiceImp.class);
         System.out.println("bean1 = " + bean1);
+
+        String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
+            if(beanDefinition.getRole()==BeanDefinition.ROLE_APPLICATION)
+            {
+                System.out.println("beanDefinitionName = " + beanDefinitionName);
+            }
+            
+
+        }
+        
+
     }
 
 }

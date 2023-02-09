@@ -40,6 +40,7 @@ public class OrderServiceTest {
 
         // when
         Order order = orderService.createOrder(memberId, "itemA", 100000);
+
         // then
         assertThat(order.getDiscountPrice()).isEqualTo(10000);
     }
@@ -48,7 +49,7 @@ public class OrderServiceTest {
     @Test
     void filedInjectionTest()
     {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             System.out.println("beanDefinitionName = " + beanDefinitionName);
