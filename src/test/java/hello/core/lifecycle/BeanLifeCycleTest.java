@@ -18,7 +18,6 @@ public class BeanLifeCycleTest {
 
     @Configuration
     static class LifeCycleConfig{
-
         @Bean
         public NetworkClient networkClient()
         {
